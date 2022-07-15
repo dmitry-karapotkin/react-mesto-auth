@@ -2,18 +2,14 @@ import { useState, useContext } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
-import InfoToolTip from './InfoToolTip';
-
 
 function AuthForm ({action, title, button, isRegistered}) {
 
-  const { handleLogin } = useContext(CurrentUserContext);
+  const { handleLogin, setModalOpen, setModalSuccess } = useContext(CurrentUserContext);
 
   const history = useHistory();
 
   const [values, setValues] = useState({});
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [isSuccess, setSuccess] = useState(false);
 
   function handleChange(e) {
     const {id: name, value} = e.target;
@@ -30,7 +26,7 @@ function AuthForm ({action, title, button, isRegistered}) {
           handleLogin();
           history.push('/');
         } else if (data.data._id && data.data.email) {
-          setSuccess(true);
+          setModalSuccess(true);
           setModalOpen(true);
         } else {
           return;
@@ -38,7 +34,7 @@ function AuthForm ({action, title, button, isRegistered}) {
       })
       .catch(error => {
         console.log(error);
-        setSuccess(false);
+        setModalSuccess(false);
         setModalOpen(true);
       });
   }
@@ -83,7 +79,6 @@ function AuthForm ({action, title, button, isRegistered}) {
           </div>
         </form>
       </section>
-      {!isRegistered && <InfoToolTip isSuccess={isSuccess} setModalOpen={setModalOpen} isOpen={isModalOpen} />}
     </>
   )
 }

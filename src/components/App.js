@@ -16,6 +16,7 @@ import * as auth from '../utils/Auth';
 
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 import { api } from '../utils/Api.js';
+import InfoToolTip from './InfoToolTip.js';
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
   const [isEditAvatarPopupOpen, setAvatarPopupOpen] = useState(false);
   const [isImagePopupOpen, setImagePopupOpen] = useState(false);
   const [isDeleteCardPopupOpen, setDeleteCardPopupOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalSuccess, setModalSuccess] = useState(false);
 
   const [cards, setCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(emptyCard);
@@ -70,6 +73,7 @@ function App() {
           setLoggedIn(true);
           history.push('/');
         })
+        .catch(error => console.log(error));
     }
   }
 
@@ -152,6 +156,7 @@ function App() {
     setPlacePopupOpen(false);
     setImagePopupOpen(false);
     setDeleteCardPopupOpen(false);
+    setModalOpen(false);
     setSelectedCard(emptyCard);
   }
 
@@ -161,6 +166,8 @@ function App() {
         authorizedUser,
         loggedIn,
         setLoggedIn,
+        setModalOpen,
+        setModalSuccess,
         handleLogin: checkToken
       }}>
         <div className="page">
@@ -217,6 +224,11 @@ function App() {
 
             <Route path="/signup">
               <Register />
+              <InfoToolTip
+                isSuccess={isModalSuccess}
+                setModalOpen={setModalOpen}
+                isOpen={isModalOpen}
+              />
             </Route>
 
             <Route path="/signin">
