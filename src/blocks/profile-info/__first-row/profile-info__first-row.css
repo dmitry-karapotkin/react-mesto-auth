@@ -1,0 +1,14 @@
+.profile-info__first-row {
+  max-width: 100%;
+  grid-area: first-row;
+  display: inline-flex;
+  align-items: flex-end;
+  align-self: flex-end;
+}
+
+
+@media (max-width: 767px) {
+  .profile-info__first-row {
+    align-self: center;
+  }
+}

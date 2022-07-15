@@ -1,0 +1,11 @@
+.profile-info__edit-icon_size_small {
+  width: 10px;
+  height: 10px;
+}
+
+@media (max-width: 767px) {
+  .profile-info__edit-icon_size_small {
+    width: 7px;
+    height: 7px;
+  }
+}

@@ -1,0 +1,28 @@
+.profile-info__overlay {
+  grid-area: photo;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: transparent;
+}
+
+.profile-info__overlay:hover {
+  background-color: rgba(0, 0, 0, .8);
+  cursor: pointer;
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .profile-info__overlay {
+    left: calc(50% - 60px);
+  }
+}

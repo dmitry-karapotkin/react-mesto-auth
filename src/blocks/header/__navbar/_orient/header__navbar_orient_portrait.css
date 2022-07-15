@@ -1,0 +1,15 @@
+.header__navbar_orient_portrait {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 142px;
+  box-sizing: border-box;
+  row-gap: 18px;
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .header__navbar_orient_portrait {
+    display: none;
+  }
+}

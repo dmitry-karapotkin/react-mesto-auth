@@ -1,0 +1,20 @@
+.header__navlink {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.header__navlink:hover {
+  opacity: .6;
+}
+
+@media (max-width: 767px) {
+  .header__navlink {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,10 @@
+.popup__error_visible {
+  visibility: visible;
+  max-width: 358px;
+}
+
+@media (max-width: 767px) {
+  .popup__error_visible {
+    max-width: 238px;
+  }
+}

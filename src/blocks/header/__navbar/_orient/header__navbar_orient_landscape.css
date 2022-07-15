@@ -1,0 +1,5 @@
+.header__navbar_orient_landscape {
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: 24px;
+}

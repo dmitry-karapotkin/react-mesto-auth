@@ -1,0 +1,14 @@
+.header__menu-icon {
+  width: 24px;
+  display: none;
+}
+
+.header__menu-icon:hover {
+  opacity: .6;
+}
+
+@media (max-width: 767px) {
+  .header__menu-icon {
+    display: block;
+  }
+}

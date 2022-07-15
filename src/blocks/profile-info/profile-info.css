@@ -1,0 +1,20 @@
+.profile-info {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 120px calc(100% - 44px - 120px - 10px);
+  grid-template-areas:
+  "photo first-row"
+  "photo second-row";
+  row-gap: 10px;
+  column-gap: 27px;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 19px 36px;
+  }
+}

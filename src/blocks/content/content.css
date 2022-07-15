@@ -1,0 +1,15 @@
+.content {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 36px 0 0;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .content {
+    margin: 38px 19px 0;
+  }
+}
