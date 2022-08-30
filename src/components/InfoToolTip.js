@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import closeIcon from '../images/mesto-close-icon.svg';
@@ -7,6 +8,18 @@ import errorIcon from '../images/mesto-error-icon.svg';
 function InfoToolTip ({isOpen, setModalOpen, isSuccess}) {
 
   const history = useHistory();
+
+  useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === 'Escape') {
+        setModalOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', closeByEscape);
+
+    return () => document.removeEventListener('keydown', closeByEscape);
+  }, []);
 
   function handleClose() {
     setModalOpen(false);

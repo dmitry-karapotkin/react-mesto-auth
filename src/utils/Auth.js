@@ -45,7 +45,8 @@ function getContent(token) {
       'Authorization' : `Bearer ${token}`
     }
   })
-    .then(checkResponse);
+    .then(checkResponse)
+    .catch(error => console.log(error));
 }
 
 export { register, getContent, login };
